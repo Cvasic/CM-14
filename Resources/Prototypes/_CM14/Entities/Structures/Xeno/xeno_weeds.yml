@@ -29,7 +29,7 @@
     id: XenoWeeds
   - type: ActiveEdgeSpreader
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_weeds.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_weeds.rsi
     drawdepth: FloorTiles
     layers:
     - state: weed0
@@ -94,7 +94,7 @@
   description: A weird, pulsating node
   components:
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_weeds.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_weeds.rsi
     drawdepth: FloorTiles
     layers:
     - state: weed0
@@ -114,7 +114,7 @@
   - type: EdgeSpreader
     id: XenoWeeds
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_weeds.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_weeds.rsi
     drawdepth: FloorTiles
     layers:
     - state: hive_weed0
@@ -167,7 +167,7 @@
   name: hive resin node
   components:
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_weeds.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_weeds.rsi
     drawdepth: FloorTiles
     layers:
     - state: hive_weed0
@@ -197,7 +197,7 @@
         hard: false
   - type: Clickable
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_weeds.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_weeds.rsi
     drawdepth: Objects
     layers:
     - state: weedwall
