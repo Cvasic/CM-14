@@ -3,8 +3,8 @@ using Content.Shared._CM14.Marines.Skills;
 using Content.Shared._CM14.Weapons.Ranged.Whitelist;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Timing;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -25,20 +25,20 @@ public sealed class CMGunSystem : EntitySystem
     [Dependency] private readonly SharedBroadphaseSystem _broadphase = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<ProjectileComponent> _projectileQuery;
 
     public override void Initialize()
     {
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
+        _projectileQuery = GetEntityQuery<ProjectileComponent>();
 
         SubscribeLocalEvent<AmmoFixedDistanceComponent, AmmoShotEvent>(OnAmmoFixedDistanceShot);
 
@@ -53,6 +53,8 @@ public sealed class CMGunSystem : EntitySystem
 
         SubscribeLocalEvent<GunUnskilledPenaltyComponent, GotEquippedHandEvent>(OnGunUnskilledPenaltyEquippedHand);
         SubscribeLocalEvent<GunUnskilledPenaltyComponent, GunRefreshModifiersEvent>(OnGunUnskilledPenaltyRefresh);
+
+        SubscribeLocalEvent<GunDamageModifierComponent, AmmoShotEvent>(OnGunDamageModifierAmmoShot);
     }
 
     private void OnAmmoFixedDistanceShot(Entity<AmmoFixedDistanceComponent> ent, ref AmmoShotEvent args)
@@ -139,6 +141,17 @@ public sealed class CMGunSystem : EntitySystem
 
         args.MinAngle += ent.Comp.AngleIncrease;
         args.MaxAngle += ent.Comp.AngleIncrease;
+    }
+
+    private void OnGunDamageModifierAmmoShot(Entity<GunDamageModifierComponent> ent, ref AmmoShotEvent args)
+    {
+        foreach (var projectile in args.FiredProjectiles)
+        {
+            if (!_projectileQuery.TryGetComponent(projectile, out var comp))
+                continue;
+
+            comp.Damage *= ent.Comp.Multiplier;
+        }
     }
 
     private void StopProjectile(Entity<ProjectileFixedDistanceComponent> projectile)
