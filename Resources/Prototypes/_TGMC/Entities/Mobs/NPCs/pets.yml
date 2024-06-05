@@ -1,7 +1,7 @@
 - type: entity
   name: Ranger
   parent: SimpleMobBase
-  id: MobRanger
+  id: TGMCMobRanger
   description: This dog can tell something smells around here, and that something is CRIME!
   components:
   - type: Sprite
