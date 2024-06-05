@@ -1,0 +1,31 @@
+﻿# scout
+- type: entity
+  parent: CMArmorM3Medium
+  id: TGMCArmorScout
+  name: scout armor
+  description: A standard scout armor.
+  components:
+  - type: Sprite
+    sprite: _TGMC/Objects/Clothing/OuterClothing/Armor/scout.rsi
+  - type: Clothing
+    sprite: _TGMC/Objects/Clothing/OuterClothing/Armor/scout.rsi
+  - type: CMArmor
+    armor: 25
+    explosionArmor: 20
+
+- type: entity
+  parent: CMArmorM3Medium
+  id: TGMCArmorGrenadier
+  name: grenadier armor
+  description: A standard grenadier armor.
+  components:
+  - type: Sprite
+    sprite: _TGMC/Objects/Clothing/OuterClothing/Armor/grenadier.rsi
+  - type: Clothing
+    sprite: _TGMC/Objects/Clothing/OuterClothing/Armor/grenadier.rsi
+  - type: CMArmor
+    armor: 30
+    explosionArmor: 20
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8

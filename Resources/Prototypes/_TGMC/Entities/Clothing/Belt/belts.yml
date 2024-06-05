@@ -1,6 +1,6 @@
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
-  id: CMClothingBeltRapier
+  id: TGMCClothingBeltRapier
   name: rapier scaddard
   description: Rapier scaddard
   components:
@@ -29,11 +29,11 @@
   - type: Appearance
 
 - type: entity
-  id: CMClothingBeltRapierFilled
-  parent: CMClothingBeltRapier
+  id: TGMCClothingBeltRapierFilled
+  parent: TGMCClothingBeltRapier
   suffix: Filled
   components:
   - type: ContainerFill
     containers:
       item:
-      - CMRapier
+      - TGMCRapier

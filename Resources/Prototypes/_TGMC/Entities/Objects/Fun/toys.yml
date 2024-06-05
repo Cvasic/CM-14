@@ -1,6 +1,6 @@
 - type: entity
   parent: BasePlushie
-  id: RubberPip
+  id: TGMCRubberPip
   name: rubber pig
   description: Dimentius drive the pigs.
   components:
@@ -32,7 +32,7 @@
         variation: 0.125
   - type: StepTrigger
     intersectRatio: 0.2
-    requiredTriggeredSpeed: 1
+    requiredTriggeredSpeed: 2
   - type: TriggerOnStepTrigger
   - type: Appearance
   - type: CollisionWake
