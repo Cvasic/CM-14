@@ -9,16 +9,16 @@
     sprite: _TGMC/Objects/Weapons/Melee/rapier.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1.6
     damage:
       types:
-        Slash: 20
+        Slash: 10
         Piercing: 30
     soundHit:
         path: /Audio/_TGMC/Weapons/rapier.ogg
   - type: Reflect
     enabled: true
-    reflectProb: .6
+    reflectProb: .4
     spread: 90
   - type: SolutionContainerManager
     solutions:
