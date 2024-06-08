@@ -38,3 +38,15 @@
     sprite: _TGMC/Objects/Clothing/Head/Helmets/grenadier.rsi
   - type: Clothing
     sprite: _TGMC/Objects/Clothing/Head/Helmets/grenadier.rsi
+    
+- type: entity
+  parent: TGMCArmorHelmetScout
+  id: TGMCArmorHelmetDemolitionist
+  name: demolitionist helmet
+  description: A standard demolitionist Helmet.
+  components:
+  - type: Sprite
+    sprite: _TGMC/Objects/Clothing/Head/Helmets/demolitionist.rsi
+  - type: Clothing
+    sprite: _TGMC/Objects/Clothing/Head/Helmets/demolitionist.rsi
+
