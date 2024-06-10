@@ -12,7 +12,7 @@
           "/Audio/Weapons/smash.ogg" # TODO CM14
   - type: InteractionOutline
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_resin_door.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_resin_door.rsi
     layers:
     - state: resin
       map: ["enum.DoorVisualLayers.Base"]
@@ -86,7 +86,7 @@
   name: thick resin door
   components:
   - type: Sprite
-    sprite: _CM14/Structures/Xenos/xeno_resin_door.rsi
+    sprite: _TGMC/Structures/Xenos/xeno_resin_door.rsi
     layers:
     - state: thick_resin
       map: ["enum.DoorVisualLayers.Base"]
