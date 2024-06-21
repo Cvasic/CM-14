@@ -1,13 +1,24 @@
 - type: entity
-  parent: CMWallShuttleBlack
+  parent: CMBaseWall
   id: TGMCRedWall
   name: red wall
   description: Red wall.
   components:
   - type: Sprite
-  - type: Sprite
     sprite: _TGMC/Structures/Walls/red_wall.rsi
   - type: Icon
     sprite: _TGMC/Structures/Walls/red_wall.rsi
-  - type: Icon
-    state: red_wall
+  - type: Tag
+    tags:
+    - Wall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: walls
+    base: red_wall
