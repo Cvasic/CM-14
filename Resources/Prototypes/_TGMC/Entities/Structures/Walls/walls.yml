@@ -1,0 +1,13 @@
+- type: entity
+  parent: CMWallShuttleBlack
+  id: TGMCRedWall
+  name: red wall
+  description: Red wall.
+  components:
+  - type: Sprite
+  - type: Sprite
+    sprite: _TGMC/Structures/Walls/red_wall.rsi
+  - type: Icon
+    sprite: _TGMC/Structures/Walls/red_wall.rsi
+  - type: Icon
+    state: red_wall
